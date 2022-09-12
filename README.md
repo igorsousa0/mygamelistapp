@@ -1,2 +1,2 @@
-# mygamelistapp
+# MyGameList
 Trabalho da Universidade - Aplicativo
