@@ -1,2 +1,2 @@
 # MyGameList
-Trabalho da Universidade - Aplicativo
+Trabalho da Universidade - Aplicativo feito no Flutter
