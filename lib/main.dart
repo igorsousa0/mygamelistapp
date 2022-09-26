@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:mygamelist/config.dart';
 import 'package:mygamelist/screens/home/home.dart';
-import 'package:mygamelist/screens/profile/profile.dart';
+import 'package:mygamelist/screens/login/login.dart';
+import 'package:mygamelist/screens/profile/user.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,7 +16,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
+      title: 'MyGameList',
       theme: ThemeData(
         // This is the theme of your application.
         //
@@ -57,11 +58,11 @@ class _MyHomePageState extends State<MyHomePage> {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   final pageViewController = PageController();
 
-  @override
+  /*@override
   void dispose() {
     super.dispose();
     pageViewController.dispose();
-  }
+  }*/
 
   @override
   Widget build(BuildContext context) {
@@ -78,62 +79,7 @@ class _MyHomePageState extends State<MyHomePage> {
         children: [
           Home(),
           Container(),
-          Profile(),
-          /*Container(
-            child: Align(
-              alignment: Alignment.topLeft,
-              child: Padding(
-                padding: const EdgeInsets.all(16),
-                child: TextField(
-                  controller: controller,
-                  decoration: InputDecoration(
-                      hintText: 'Procurar',
-                      border: OutlineInputBorder(
-                          borderSide:
-                              BorderSide(color: Colors.blue, width: 5.0),
-                          borderRadius: BorderRadius.circular(20.0)),
-                      prefixIcon: const Icon(Icons.search)),
-                ),
-              ),
-            ),
-          ),
-          Expanded(
-            child: Container(
-              decoration: const BoxDecoration(
-                  borderRadius: BorderRadius.all(Radius.circular(10))),
-              child: Padding(
-                padding: const EdgeInsets.all(5.0),
-                child: PageView(
-                  children: [
-                    GridView.builder(
-                        itemCount: 10,
-                        gridDelegate:
-                            const SliverGridDelegateWithFixedCrossAxisCount(
-                                crossAxisCount: 2,
-                                crossAxisSpacing: 10,
-                                mainAxisSpacing: 10),
-                        itemBuilder: (context, index) => Card(
-                              semanticContainer: true,
-                              clipBehavior: Clip.antiAliasWithSaveLayer,
-                              child: Column(
-                                children: [
-                                  InkWell(
-                                    child: Icon(Icons.image),
-                                  ),
-                                  Expanded(
-                                    child: ListTile(
-                                      title: Text('Teste'),
-                                    ),
-                                  )
-                                ],
-                              ),
-                            ))
-                  ],
-                ),
-              ),
-            ),
-          )
-        */
+          loginGlobal == false ? Login() : User(),
         ],
       ),
       bottomNavigationBar: AnimatedBuilder(
