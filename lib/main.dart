@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mygamelist/config.dart';
+import 'package:mygamelist/screens/favorite/favorite.dart';
 import 'package:mygamelist/screens/home/home.dart';
 import 'package:mygamelist/screens/login/login.dart';
 import 'package:mygamelist/screens/profile/user.dart';
@@ -64,6 +65,12 @@ class _MyHomePageState extends State<MyHomePage> {
     pageViewController.dispose();
   }*/
 
+  Widget favoriteWithoutLogin() => Container(
+        child: Center(
+            child: Text('Em construção' /*'Login necessário'*/,
+                style: TextStyle(fontSize: 18))),
+      );
+
   @override
   Widget build(BuildContext context) {
     // This method is rerun every time setState is called, for instance as done
@@ -73,12 +80,13 @@ class _MyHomePageState extends State<MyHomePage> {
     // fast, so that you can just rebuild anything that needs updating rather
     // than having to individually change instances of widgets.
     return Scaffold(
-      backgroundColor: Colors.grey,
+      backgroundColor: Colors.white,
       body: PageView(
         controller: pageViewController,
         children: [
           Home(),
-          Container(),
+          //loginGlobal == false ? favoriteWithoutLogin() : Favorite(),
+          favoriteWithoutLogin(),
           loginGlobal == false ? Login() : User(),
         ],
       ),

@@ -1,6 +1,6 @@
-# MyGameList
+# mygamelist
 
-Projeto desenvolvido em Flutter.
+A new Flutter project.
 
 ## Getting Started
 

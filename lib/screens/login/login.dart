@@ -31,6 +31,8 @@ class _LoginState extends State<Login> {
         setState(() {
           loginTextGlobal = jsonData["username"];
           loginGlobal = true;
+          favoriteString = jsonData["favorite"];
+          favoriteList = favoriteString.split(',');
           showModalDialog(context, 'Login', 'Login feito com sucesso!');
         });
       } else {
